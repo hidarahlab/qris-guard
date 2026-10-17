@@ -1,6 +1,6 @@
 fastapi==0.115.*
 uvicorn[standard]==0.32.*
-google-genai==1.25.*
+google-genai==2.31.*
 python-multipart==0.0.*
 opencv-python-headless==4.11.*
 pyzbar==0.1.9
