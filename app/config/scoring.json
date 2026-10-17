@@ -1,0 +1,23 @@
+{
+  "name_match": {
+    "exact_threshold": 0.95,
+    "partial_threshold": 0.5
+  },
+  "signals": {
+    "name_mismatch": 60,
+    "name_partial": 25,
+    "crc_invalid": 25,
+    "merchant_name_missing": 20,
+    "qris_domain_missing": 30,
+    "fraud_pattern_match": 70
+  },
+  "thresholds": {
+    "safe_max": 24,
+    "caution_max": 54
+  },
+  "labels": {
+    "safe": "No red flags detected",
+    "caution": "Caution",
+    "do_not_pay": "Do not pay"
+  }
+}

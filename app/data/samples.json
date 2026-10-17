@@ -1,0 +1,52 @@
+[
+  {
+    "id": "safe_match",
+    "title": {
+      "en": "Valid QR - name matches",
+      "id": "QR valid - nama cocok"
+    },
+    "image": "samples/safe_match.png",
+    "shop_name_to_enter": "Warung Demo Sejahtera",
+    "expected_verdict": "SAFE"
+  },
+  {
+    "id": "mismatch_do_not_pay",
+    "title": {
+      "en": "Sticker overlay - name mismatch",
+      "id": "Stiker tempelan - nama tidak cocok"
+    },
+    "image": "samples/mismatch_do_not_pay.png",
+    "shop_name_to_enter": "Warung Demo Sejahtera",
+    "expected_verdict": "DO_NOT_PAY"
+  },
+  {
+    "id": "corrupted_crc_empty_name",
+    "title": {
+      "en": "Corrupted QR - empty merchant name",
+      "id": "QR rusak - nama pedagang kosong"
+    },
+    "image": "samples/corrupted_crc_empty_name.png",
+    "shop_name_to_enter": "",
+    "expected_verdict": "CAUTION"
+  },
+  {
+    "id": "partial_match",
+    "title": {
+      "en": "Partial name match",
+      "id": "Nama cocok sebagian"
+    },
+    "image": "samples/partial_match.png",
+    "shop_name_to_enter": "Warung Demo Sejahtera",
+    "expected_verdict": "CAUTION"
+  },
+  {
+    "id": "standee_vision",
+    "title": {
+      "en": "Standee photo - read name with vision",
+      "id": "Foto standee - baca nama dengan vision"
+    },
+    "image": "samples/standee_vision.png",
+    "shop_name_to_enter": "",
+    "expected_verdict": "SAFE"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "sticker_overlay",
+    "title": "Sticker overlay on legitimate QR",
+    "description": "A scammer places their own QR sticker on top of a real merchant's QR code. The merchant name in the QR does not match the shop name visible in the photo.",
+    "signals": ["name_mismatch", "crc_valid"],
+    "advice": {
+      "en": "Check that the sticker matches the shop name and is not pasted over another code.",
+      "id": "Pastikan stiker sesuai dengan nama toko dan tidak menempel di kode lain."
+    }
+  },
+  {
+    "id": "personal_name_on_business_location",
+    "title": "Personal-name merchant at a business location",
+    "description": "The QR merchant name is a personal account rather than the registered business name seen at the location.",
+    "signals": ["name_mismatch", "qris_domain_missing"],
+    "advice": {
+      "en": "Verify the merchant is registered to the business, not an individual's account.",
+      "id": "Pastikan pedagang terdaftar atas nama usaha, bukan akun pribadi."
+    }
+  },
+  {
+    "id": "static_qr_with_amount",
+    "title": "Static QR with a suspicious amount",
+    "description": "A static QR code (type 11) includes a transaction amount, which is unusual and may indicate tampering.",
+    "signals": ["static_with_amount"],
+    "advice": {
+      "en": "Static QR codes normally do not set an amount. Ask the merchant to generate a fresh dynamic QR.",
+      "id": "Kode QR statis biasanya tidak memiliki jumlah. Minta pedagang membuat QR dinamis baru."
+    }
+  },
+  {
+    "id": "broken_crc",
+    "title": "Copy-pasted QR with broken CRC",
+    "description": "The QR payload has an invalid CRC, suggesting it was edited or copied incorrectly.",
+    "signals": ["crc_invalid"],
+    "advice": {
+      "en": "Do not pay. The QR data may have been tampered with.",
+      "id": "Jangan membayar. Data QR mungkin telah diubah."
+    }
+  },
+  {
+    "id": "generic_merchant_name",
+    "title": "Generic merchant name",
+    "description": "The merchant name is overly generic, such as 'TOKO ONLINE 123' or 'WARUNG MAKMUR', with no clear link to the shop.",
+    "signals": ["generic_name", "name_mismatch"],
+    "advice": {
+      "en": "Generic names are easy to fake. Confirm the merchant identity before paying.",
+      "id": "Nama umum mudah dipalsukan. Konfirmasi identitas pedagang sebelum membayar."
+    }
+  },
+  {
+    "id": "missing_qris_domain",
+    "title": "Missing QRIS domain",
+    "description": "The QR payload does not contain a recognized QRIS identifier in the merchant account information.",
+    "signals": ["qris_domain_missing"],
+    "advice": {
+      "en": "This does not look like a standard QRIS code. Ask the merchant for a valid QRIS QR.",
+      "id": "Ini tidak terlihat seperti kode QRIS standar. Minta pedagang menunjukkan QRIS yang valid."
+    }
+  },
+  {
+    "id": "empty_merchant_name",
+    "title": "Empty or missing merchant name",
+    "description": "The QR payload has no merchant name, making it impossible to verify who will receive the payment.",
+    "signals": ["merchant_name_missing"],
+    "advice": {
+      "en": "A valid QRIS code must show a merchant name. Do not pay if the name is blank.",
+      "id": "Kode QRIS yang valid harus menampilkan nama pedagang. Jangan bayar jika nama kosong."
+    }
+  },
+  {
+    "id": "name_partial_similarity",
+    "title": "Partial name similarity",
+    "description": "The merchant name partly matches the shop name but is not identical. This can be a typo, rebrand, or warning sign.",
+    "signals": ["name_partial"],
+    "advice": {
+      "en": "The names are close but not the same. Double-check with the merchant before paying.",
+      "id": "Namanya mirip tapi tidak sama. Periksa lagi dengan pedagang sebelum membayar."
+    }
+  },
+  {
+    "id": "suspicious_amount",
+    "title": "Unusually high or rounded amount",
+    "description": "The QR amount is much higher than expected or suspiciously round, which can indicate a tampered dynamic QR.",
+    "signals": ["amount_mismatch"],
+    "advice": {
+      "en": "Compare the amount with your expected bill before confirming payment.",
+      "id": "Bandingkan jumlah dengan tagihan yang diharapkan sebelum membayar."
+    }
+  },
+  {
+    "id": "mixed_merchant_accounts",
+    "title": "Mixed merchant account identifiers",
+    "description": "The QR contains conflicting merchant account information from multiple acquirers or identifiers.",
+    "signals": ["multiple_acquirers", "name_mismatch"],
+    "advice": {
+      "en": "Conflicting account details are a red flag. Ask the merchant to show the original QR.",
+      "id": "Detail akun yang bertentangan adalah tanda bahaya. Minta pedagang menunjukkan QR asli."
+    }
+  }
+]
